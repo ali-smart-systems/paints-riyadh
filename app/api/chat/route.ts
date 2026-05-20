@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const apiKey = process.env.GEMINI_API_KEY;
 
     // الأوامر الأساسية الثابتة
-    let systemPrompt = `أنت المعلم نواف، خبير دهانات وديكورات بالرياض.
+    let systemPrompt = `أنت المعلم ابو نشمي، خبير دهانات وديكورات بالرياض.
   قواعد صارمة للرد:
   1. أجب باختصار شديد جداً (في سطر أو سطرين كحد أقصى).
   2. اجعل أسلوبك يشبه رسائل الواتساب السريعة.
@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 
     // اللمسة الهندسية: إذا كان رقم الرسالة يقبل القسمة على 4 بدون باقٍ
     if (messageCount && messageCount % 4 === 0) {
-        systemPrompt += `\n5. (مهم جداً): في نهاية هذا الرد، اطلب من العميل بوضوح أن يتصل على 0559771963 للمعاينة المجانية وتطبيق الخصم.`;
+        systemPrompt += `\n5. (مهم جداً): في نهاية هذا الرد، اطلب من العميل بوضوح أن يتصل على 0536242933 للمعاينة المجانية وتطبيق الخصم.`;
     } else {
         systemPrompt += `\n5. (تحذير صارم): لا تطلب من العميل الاتصال ولا تذكر رقم الهاتف أبداً في هذا الرد. أجب على السؤال فقط.`;
     }
@@ -33,13 +33,13 @@ export async function POST(req: Request) {
 
         if (data.error) {
             console.error("Google API Error:", data.error.message);
-            return NextResponse.json({ reply: "المعذرة يا غالي، عندي ضغط رسايل حالياً.. تقدر تتصل علي مباشرة على 0559771963 وأبشر بسعدك!" });
+            return NextResponse.json({ reply: "المعذرة يا غالي، عندي ضغط رسايل حالياً.. تقدر تتصل علي مباشرة على 0536242933 وأبشر بسعدك!" });
         }
 
         const reply = data.candidates[0].content.parts[0].text;
         return NextResponse.json({ reply });
 
     } catch (error) {
-        return NextResponse.json({ reply: "المعذرة يا غالي، عندي ضغط رسايل حالياً.. تقدر تتصل علي مباشرة على 0559771963 وأبشر بسعدك!" });
+        return NextResponse.json({ reply: "المعذرة يا غالي، عندي ضغط رسايل حالياً.. تقدر تتصل علي مباشرة على 0536242933 وأبشر بسعدك!" });
     }
 }

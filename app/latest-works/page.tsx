@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ContactButtons from '../../components/ContactButtons';
 
-const PHONE_NUMBER = "0559771963";
+const PHONE_NUMBER = "0536242933";
 
 const JSON_LD = {
     "@context": "https://schema.org",
@@ -14,7 +14,7 @@ const JSON_LD = {
     "provider": {
         "@type": "ProfessionalService",
         "name": "معلم دهانات الرياض",
-        "telephone": "+966559771963"
+        "telephone": "+966536242933"
     }
 };
 
