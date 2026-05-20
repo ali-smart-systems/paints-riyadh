@@ -5,13 +5,14 @@ import Script from 'next/script';
 import NawafChat from '../components/NawafChat';
 
 export const viewport: Viewport = {
+
   width: 'device-width',
   initialScale: 1,
   themeColor: '#0f172a', // تم تحديثه ليطابق كود brand.primary بالضبط
 };
 
 export const metadata: Metadata = {
-  title: 'معلم دهانات وديكورات الرياض | أفضل أصباغ جدران 0559771963',
+  title: 'معلم دهانات وديكورات الرياض | أفضل أصباغ جدران 0536242933',
   description: 'أفضل معلم ومقاول دهانات في الرياض، تنفيذ بويات داخلية وخارجية، بديل الرخام، الفوم، وورق جدران. نخدم أحياء العارض، النرجس، الملقا، الياسمين وكافة مناطق شمال الرياض بخصم 20%.',
   keywords: [
     "معلم دهانات الرياض", "صباغ حي العارض", "معلم بوية حي النرجس",
@@ -42,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "HomeAndConstructionBusiness",
     "name": "معلم دهانات وديكورات الرياض",
     "url": "https://www.paints-riyadh.com",
-    "telephone": "+966559771963",
+    "telephone": "+966536242933",
     "areaServed": [
       { "@type": "City", "name": "الرياض" },
       { "@type": "Neighborhood", "name": "حي العارض" },

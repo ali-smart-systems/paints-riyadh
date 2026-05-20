@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ContactButtons from '../components/ContactButtons';
 
 // فصل البيانات الثابتة خارج المكون لتحسين الأداء
-const PHONE_NUMBER = "0559771963";
+const PHONE_NUMBER = "0536242933";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -12,7 +12,7 @@ const JSON_LD = {
   "name": "معلم دهانات وديكورات الرياض",
   "image": "https://www.paints-riyadh.com/images/paint1.webp",
   "description": "أفضل معلم دهانات في الرياض، تنفيذ دهانات داخلية وخارجية بأسعار منافسة في شمال الرياض.",
-  "telephone": "+966559771963",
+  "telephone": "+966536242933",
   "url": "https://www.paints-riyadh.com",
 };
 
