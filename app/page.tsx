@@ -48,7 +48,7 @@ const SECTIONS = [
   {
     id: 5,
     title: "دهانات وديكورات فلل",
-    desc: "نضفي لمسات من الفخامة المطلقة على الفلل والقصور، بدمج الدهانات الحديثة مع أعمال الديكور المتقدمة لإنتاج فراغات تنطق بالرقي.",
+    desc: "نضفي لمسات من الفخامة المطلقة على الفلل والقصور, بدمج الدهانات الحديثة مع أعمال الديكور المتقدمة لإنتاج فراغات تنطق بالرقي.",
     features: ["تنفيذ ديكورات الفوم وبديل الرخام والخشب", "تذهيب وتعتيق بطابع كلاسيكي أو نيو-كلاسيك", "إشراف هندسي على دقة التشطيبات"],
     link: "/flats-paints", imgNum: 5
   },
@@ -76,7 +76,7 @@ const SECTIONS = [
   {
     id: 9,
     title: "استشارات هندسية للدهانات",
-    desc: "محتار في اختيار الألوان？ خبراؤنا يقدمون لك استشارة متكاملة لتوزيع الألوان بناءً على مساحة الغرف، ومسارات الإضاءة الطبيعية والصناعية.",
+    desc: "محتار في اختيار الألوان؟ خبراؤنا يقدمون لك استشارة متكاملة لتوزيع الألوان بناءً على مساحة الغرف، ومسارات الإضاءة الطبيعية والصناعية.",
     features: ["مطابقة الألوان مع لون الأثاث والأرضيات", "اختيار نوع الدهان المناسب لاستخدام كل غرفة", "زيارة ميدانية لرفع المقاسات وتقديم العينات"],
     link: "/painting-consultation", imgNum: 9
   },
@@ -91,46 +91,46 @@ const SECTIONS = [
 
 export default function Home() {
   return (
-    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-950" dir="rtl">
+    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-900" dir="rtl">
       <Script
         id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
 
-      {/* 🖼️ الصورة الخلفية الثابتة للموقع بالكامل تعبيراً عن بيئة الديكور الاحترافية */}
+      {/* 🖼️ خلفية الديكور المشرقة والواضحة تماماً بطلب الزبون */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Image
           src="/images/paint18.webp"
-          alt="خلفية ديكورات فخمة"
+          alt="خلفية ديكورات فخمة مضيئة"
           fill
           priority
-          className="object-cover opacity-35"
+          className="object-cover opacity-75 brightness-95" 
         />
-        {/* طبقة تظليل متدرجة ناعمة تضمن تباين النصوص مع حركة السكرول */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/60 to-slate-950/90"></div>
+        {/* تظليل متدرج ناعم جداً ومشرق لحفظ تباين الخطوط دون تعتيم البيئة العامة */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-slate-900/30 to-black/50"></div>
       </div>
 
       <div className="relative z-10">
         {/* 🌟 الهيدر الملكي */}
-        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/10 overflow-hidden bg-slate-950/20 backdrop-blur-sm">
+        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/20 overflow-hidden bg-black/10 backdrop-blur-[2px]">
           <div className="bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-black mb-6 shadow-md animate-pulse">
             خصم حصري 20% لجميع أحياء شمال الرياض ⚡
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
             مـعلم دهانات <br />
-            <span className="text-brand-gold bg-gradient-to-r from-amber-400 to-yellow-600 bg-clip-text text-transparent">وديكورات الرياض</span>
+            <span className="text-brand-gold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">وديكورات الرياض</span>
           </h1>
 
-          <p className="max-w-3xl mx-auto text-lg text-amber-50/90 leading-relaxed font-bold mb-8 drop-shadow-md">
+          <p className="max-w-3xl mx-auto text-lg text-white leading-relaxed font-black mb-8 drop-shadow-[0_3px_3px_rgba(0,0,0,0.8)]">
             نحول رؤيتك إلى واقع بأيدي خبراء. تشطيبات متكاملة، دهانات حديثة، وديكورات فخمة تضفي طابعاً ملكياً على مساحتك. نضمن لك أعلى معايير الجودة والتزاماً صارماً بموعد التسليم.
           </p>
 
           <div className="flex flex-col items-center">
-            <p className="text-white text-base mb-2 font-bold drop-shadow-sm">📞 احجز استشارتك المجانية الآن</p>
+            <p className="text-white text-base mb-2 font-bold drop-shadow-md">📞 احجز استشارتك المجانية الآن</p>
             <a href={`tel:${PHONE_NUMBER}`}
-              className="text-5xl md:text-7xl font-black text-brand-gold bg-gradient-to-r from-amber-300 to-yellow-500 bg-clip-text text-transparent drop-shadow-xl tracking-wider hover:scale-105 transition-transform">
+              className="text-5xl md:text-7xl font-black text-amber-400 drop-shadow-[0_4px_4px_rgba(0,0,0,0.9)] tracking-wider hover:scale-105 transition-transform">
               {PHONE_NUMBER}
             </a>
           </div>
@@ -138,7 +138,7 @@ export default function Home() {
 
         {/* 🎥 فيديو الواجهة */}
         <section className="px-5 max-w-6xl mx-auto -mt-24">
-          <div className="rounded-[35px] overflow-hidden h-[350px] bg-black shadow-2xl border border-white/10">
+          <div className="rounded-[35px] overflow-hidden h-[350px] bg-black shadow-2xl border border-white/20">
             <video
               autoPlay muted loop playsInline
               className="w-full h-full object-cover"
@@ -149,23 +149,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 🎨 معرض الأقسام - كروت عائمة بتأثير ग्लास ميرفيزم */}
+        {/* 🎨 معرض الأقسام - كروت زجاجية شفافة وعاكسة لإضاءة الديكور */}
         <section className="px-5 max-w-6xl mx-auto mt-20">
           {SECTIONS.map((section) => (
-            <article key={section.id} className="flex flex-wrap items-stretch bg-slate-950/40 backdrop-blur-xl rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/10 hover:border-amber-500/30 transition-all duration-300">
+            <article key={section.id} className="flex flex-wrap items-stretch bg-slate-950/40 backdrop-blur-xl rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/20 hover:border-amber-400/50 transition-all duration-300">
 
               {/* 📝 قسم النص (يمين) */}
-              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl font-black text-white mb-4">
-                  <span className="text-amber-500 ml-2">|</span>{section.title}
+              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center bg-black/20">
+                <h2 className="text-3xl font-black text-white mb-4 drop-shadow-md">
+                  <span className="text-amber-400 ml-2">|</span>{section.title}
                 </h2>
-                <p className="text-amber-50/80 text-base leading-loose mb-6">
+                <p className="text-white text-base leading-loose font-medium mb-6 drop-shadow-sm">
                   {section.desc}
                 </p>
                 <ul className="space-y-3 mb-10">
                   {section.features.map((feature, i) => (
-                    <li key={i} className="flex items-start text-amber-100/90 font-medium">
-                      <span className="text-amber-500 ml-3 text-lg">✔</span>
+                    <li key={i} className="flex items-start text-amber-50 font-semibold drop-shadow-sm">
+                      <span className="text-amber-400 ml-3 text-lg">✔</span>
                       {feature}
                     </li>
                   ))}
@@ -184,8 +184,8 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-slate-950/70 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="bg-slate-950/90 backdrop-blur-md border border-amber-500/40 text-amber-400 px-6 py-3 rounded-2xl font-bold shadow-2xl">
+                <div className="absolute inset-0 bg-slate-950/60 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-slate-950/90 backdrop-blur-md border border-amber-400/40 text-amber-400 px-6 py-3 rounded-2xl font-bold shadow-2xl">
                     👆 اضغط على الصورة لفتح {section.title}
                   </div>
                 </div>
@@ -195,10 +195,10 @@ export default function Home() {
           ))}
 
           {/* ⭐️ كارت التقييم */}
-          <div className="bg-slate-950/50 backdrop-blur-xl p-12 rounded-[40px] text-center shadow-2xl border border-white/10">
-            <div className="text-amber-500 text-4xl mb-4">★★★★★</div>
-            <p className="text-xl font-bold text-white leading-relaxed italic">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
-            <p className="text-amber-200/60 mt-6">— ابو فهد (حي الملقا)</p>
+          <div className="bg-slate-950/40 backdrop-blur-xl p-12 rounded-[40px] text-center shadow-2xl border border-white/20">
+            <div className="text-amber-400 text-4xl mb-4">★★★★★</div>
+            <p className="text-xl font-black text-white leading-relaxed italic drop-shadow-sm">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
+            <p className="text-amber-200 font-bold mt-6 drop-shadow-sm">— ابو فهد (حي الملقا)</p>
           </div>
         </section>
       </div>
