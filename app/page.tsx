@@ -33,34 +33,41 @@ export default function Home() {
     <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-950" dir="rtl">
       <Script id="structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
 
-      <div className="fixed inset-0 z-0">
-        <Image src="/images/paint18.webp" alt="Background" fill className="object-cover" priority />
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <Image src="/images/paint18.webp" alt="Background" fill priority className="object-cover" />
       </div>
 
       <div className="relative z-10">
-        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 bg-gradient-to-b from-black/60 to-transparent">
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 drop-shadow-lg">مـعلم دهانات الرياض</h1>
-          <a href={`tel:${PHONE_NUMBER}`} className="text-6xl font-black text-amber-400 drop-shadow-2xl">{PHONE_NUMBER}</a>
+        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 bg-gradient-to-b from-black/60 to-transparent">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4">مـعلم دهانات وديكورات الرياض</h1>
+          <a href={`tel:${PHONE_NUMBER}`} className="text-5xl md:text-7xl font-black text-amber-400">{PHONE_NUMBER}</a>
         </header>
 
-        <section className="px-5 max-w-6xl mx-auto space-y-10">
+        <section className="px-5 max-w-6xl mx-auto mt-20">
           {SECTIONS.map((section) => (
-            <article key={section.id} className="flex flex-wrap items-stretch rounded-[40px] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-300">
+            <article key={section.id} className="flex flex-wrap items-stretch bg-white/5 backdrop-blur-xl border border-white/10 rounded-[40px] overflow-hidden mb-16 shadow-2xl transition-all hover:border-amber-400/30">
               <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl font-black text-white mb-4">{section.title}</h2>
-                <p className="text-slate-100 text-lg mb-6 leading-relaxed">{section.desc}</p>
-                <ul className="space-y-2 mb-8">
-                  {section.features.map((f, i) => <li key={i} className="text-amber-300 font-bold">✓ {f}</li>)}
+                <h2 className="text-3xl font-black text-white mb-4"><span className="text-amber-400 ml-2">|</span>{section.title}</h2>
+                <p className="text-slate-100 text-base leading-loose font-medium mb-6">{section.desc}</p>
+                <ul className="space-y-3 mb-10">
+                  {section.features.map((feature, i) => <li key={i} className="text-amber-50 font-semibold">✔ {feature}</li>)}
                 </ul>
-                <a href={section.link} className="bg-amber-500 text-white px-8 py-3 rounded-full w-fit font-black hover:bg-amber-600">التفاصيل</a>
+                <a href={section.link} className="bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-8 py-4 rounded-full font-black w-fit hover:brightness-110">التفاصيل ←</a>
               </div>
-              <div className="flex-1 min-w-[300px] min-h-[300px] relative">
+              <div className="flex-1 min-w-[300px] relative min-h-[400px]">
                 <Image src={`/images/paint${section.imgNum}.webp`} alt={section.title} fill className="object-cover" />
               </div>
             </article>
           ))}
+
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-[40px] text-center shadow-2xl">
+            <div className="text-amber-400 text-4xl mb-4">★★★★★</div>
+            <p className="text-xl font-black text-white italic">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
+            <p className="text-amber-200 font-bold mt-6">— ابو فهد (حي الملقا)</p>
+          </div>
         </section>
       </div>
+      <ContactButtons phoneNumber={PHONE_NUMBER} />
     </main>
   );
 }
