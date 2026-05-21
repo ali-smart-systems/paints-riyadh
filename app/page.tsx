@@ -51,6 +51,90 @@ const SECTIONS = [
     ],
     link: "/wall-repair",
     imgNum: 3
+  },
+  {
+    id: 4,
+    title: "دهانات شقق وتسليم مفتاح",
+    desc: "خدمة تشطيب متكاملة للشقق السكنية الجديدة أو المجددة.",
+    features: [
+      "تنسيق الألوان",
+      "حماية الأرضيات",
+      "باقات أسعار للعرسان"
+    ],
+    link: "/apartments-paints",
+    imgNum: 4
+  },
+  {
+    id: 5,
+    title: "دهانات وديكورات فلل",
+    desc: "لمسات فخمة للفلل والقصور.",
+    features: [
+      "ديكورات فوم وبديل رخام",
+      "تذهيب وتعتيق",
+      "إشراف هندسي"
+    ],
+    link: "/flats-paints",
+    imgNum: 5
+  },
+  {
+    id: 6,
+    title: "دهانات المشاريع التجارية",
+    desc: "هوية بصرية للمحلات والمكاتب.",
+    features: [
+      "تحمل عالي للاحتكاك",
+      "عمل ليلي بدون تعطيل",
+      "ألوان مدروسة"
+    ],
+    link: "/commercial-paints",
+    imgNum: 6
+  },
+  {
+    id: 7,
+    title: "تركيب ورق جدران احترافي",
+    desc: "دقة عالية بدون فواصل.",
+    features: [
+      "غراء إيطالي",
+      "جميع الأنواع",
+      "تجهيز الجدار"
+    ],
+    link: "/wallpaper-install",
+    imgNum: 7
+  },
+  {
+    id: 8,
+    title: "معرض تصاميم ورق الجدران",
+    desc: "أكبر كتالوج 2026.",
+    features: [
+      "تصاميم 3D",
+      "نقشات حديثة",
+      "قابلة للتنظيف"
+    ],
+    link: "/wallpapers-paints",
+    imgNum: 8
+  },
+  {
+    id: 9,
+    title: "استشارات هندسية للدهانات",
+    desc: "اختيار الألوان المناسبة.",
+    features: [
+      "مطابقة الأثاث",
+      "اختيار نوع الدهان",
+      "زيارة ميدانية"
+    ],
+    link: "/painting-consultation",
+    imgNum: 9
+  },
+  {
+    id: 10,
+    title: "معرض أحدث أعمالنا",
+    desc: "أعمال حقيقية من مشاريعنا.",
+    features: [
+      "قبل وبعد",
+      "صور حقيقية",
+      "أحياء شمال الرياض"
+    ],
+    link: "/latest-works",
+    imgNum: 10
   }
 ];
 
@@ -60,6 +144,7 @@ export default function Home() {
       className="pb-[140px] min-h-screen text-right font-sans relative overflow-hidden"
       dir="rtl"
     >
+
 <Script
         id="structured-data"
         type="application/ld+json"
@@ -68,7 +153,7 @@ export default function Home() {
         }}
       />
 
-      {/* 🖼️ الخلفية الأساسية (كما هي لكن بدون قتل الإضاءة) */}
+      {/* 🖼️ الخلفية الأساسية (بدون أي تعديل على وضوحها) */}
       <div className="fixed inset-0 z-0">
         <Image
           src="/images/paint18.webp"
@@ -79,8 +164,8 @@ export default function Home() {
         />
       </div>
 
-      {/* ⚡ تحسين مهم: تخفيف الطبقة السوداء بدون إخفاء الخلفية */}
-      <div className="fixed inset-0 bg-black/15 z-[1]"></div>
+      {/* ⚠️ طبقة خفيفة جدًا فقط بدون التأثير على وضوح الصورة */}
+      <div className="fixed inset-0 bg-black/10 z-[1]"></div>
 
       <div className="relative z-10">
 
@@ -133,6 +218,7 @@ export default function Home() {
             </video>
           </div>
         </section>
+
 {/* الكروت */}
         <section className="px-5 max-w-6xl mx-auto mt-20">
 
@@ -145,16 +231,16 @@ export default function Home() {
                 overflow-hidden
                 mb-16
 
-                /* 🎯 Hybrid Glass (أفضل توازن بين كودك وكودي) */
-                bg-white/7
-                backdrop-blur-[2px]
+                /* تحسين خفيف جداً بدون قتل الخلفية */
+                bg-white/6
+                backdrop-blur-[1.5px]
 
                 border border-white/10
                 shadow-[0_8px_32px_rgba(0,0,0,0.35)]
 
                 transition-all duration-300
-                hover:border-amber-400/40
-                hover:bg-white/10
+                hover:bg-white/8
+                hover:border-amber-400/30
               "
             >
 
@@ -216,8 +302,8 @@ export default function Home() {
                   "
                 />
 
-                {/* طبقة شفافة محسنة (مهم جداً للتوازن) */}
-                <div className="absolute inset-0 bg-black/20"></div>
+                {/* طبقة خفيفة جداً (بدون تعتيم الصورة) */}
+                <div className="absolute inset-0 bg-black/10"></div>
 
                 {/* hover overlay */}
                 <div
@@ -232,8 +318,8 @@ export default function Home() {
                 >
                   <div
                     className="
-                      bg-black/30
-                      backdrop-blur-md
+                      bg-black/25
+                      backdrop-blur-sm
                       border border-white/20
                       text-white
                       px-6 py-3
@@ -259,7 +345,7 @@ export default function Home() {
           <div
             className="
               bg-white/6
-              backdrop-blur-[2px]
+              backdrop-blur-[1.5px]
 
               p-12
               rounded-[40px]
@@ -269,8 +355,8 @@ export default function Home() {
 
               shadow-[0_8px_32px_rgba(0,0,0,0.35)]
 
-              hover:bg-white/10
               transition-all
+              hover:bg-white/8
             "
           >
             <div className="text-amber-400 text-4xl mb-4">
