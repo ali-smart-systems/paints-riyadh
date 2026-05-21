@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const NawafChat = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
-        { role: 'bot', text: 'أهلاً بك يا هندسة.. أنا مساعد مؤسسة نواف للدهانات، كيف أقدر أخدمك اليوم؟' }
+        { role: 'bot', text: 'أهلاً بك يا هندسة.. أنا مساعد مؤسسة ابو نشمي للديكورات، كيف أقدر أخدمك اليوم؟' }
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ const NawafChat = () => {
 
             {/* هيدر الشات */}
             <div className="bg-[#0f172a] text-[#fbbf24] p-4 text-center font-black text-lg border-b border-[#fbbf24]/30 flex justify-between items-center">
-                <span>مساعد نواف للدهانات</span>
+                <span>مساعد ابو نشمي للديكورات</span>
                 <button onClick={() => setIsOpen(false)} className="text-white hover:text-red-400 text-xl">✕</button>
             </div>
 
