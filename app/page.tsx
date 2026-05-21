@@ -62,7 +62,7 @@ const SECTIONS = [
     id: 7,
     title: "تركيب ورق جدران احترافي",
     desc: "دقة متناهية في قص وتركيب ورق الجدران لضمان استمرارية النقشات دون أي فواصل مرئية أو فقاعات هواء، ليظهر الجدار كقطعة واحدة.",
-    features: ["استخدام غراء إيطالي أصلي مضاد للفطريات", "تركيب جميع الأنواع (ورقي، فينيل، مخملي)", "تجهيز الجدار مسبقاً لضمان الثبات التام"],
+    features: ["استخدام غراء إيطالي أصلي مضاد للفطريات", "تركيب جميع الأنواع (ورقي، فينيل, مخملي)", "تجهيز الجدار مسبقاً لضمان الثبات التام"],
     link: "/wallpaper-install", imgNum: 7
   },
   {
@@ -97,7 +97,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
 
-      {/* 🖼️ الخلفية الثابتة الصافية */}
+      {/* 🖼️ الخلفية الثابتة الفاخرة */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Image
           src="/images/paint18.webp"
@@ -109,7 +109,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-        {/* 🌟 الهيدر الأعلى الممتاز والواضح */}
+        {/* 🌟 الهيدر الأعلى الممتاز */}
         <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/10 bg-gradient-to-b from-black/80 via-black/40 to-transparent">
           <div className="bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-black mb-6 shadow-md animate-pulse">
             خصم حصري 20% لجميع أحياء شمال الرياض ⚡
@@ -146,22 +146,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 🎨 معرض الأقسام - تم تعديل الكروت لتمرير الإضاءة بنقاء */}
+        {/* 🎨 معرض الأقسام - بتعديل التدرج المضيء والواضح للغاية */}
         <section className="px-5 max-w-6xl mx-auto mt-20">
           {SECTIONS.map((section) => (
-            <article key={section.id} className="flex flex-wrap items-stretch bg-white/[0.08] backdrop-blur-md rounded-[40px] overflow-hidden mb-16 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-white/20 hover:border-amber-400/60 transition-all duration-300">
+            <article key={section.id} className="flex flex-wrap items-stretch bg-gradient-to-b from-black/70 via-black/50 to-transparent backdrop-blur-sm rounded-[40px] overflow-hidden mb-16 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-white/10 hover:border-amber-400/50 transition-all duration-300">
 
-              {/* 📝 قسم النص المضيء (يمين) */}
-              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center bg-black/30">
+              {/* 📝 قسم النص الواضح جداً (يمين) */}
+              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl font-black text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                   <span className="text-amber-400 ml-2">|</span>{section.title}
                 </h2>
-                <p className="text-white text-base leading-loose font-bold mb-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                <p className="text-slate-100 text-base leading-loose font-bold mb-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                   {section.desc}
                 </p>
                 <ul className="space-y-3 mb-10">
                   {section.features.map((feature, i) => (
-                    <li key={i} className="flex items-start text-white font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                    <li key={i} className="flex items-start text-slate-100 font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
                       <span className="text-amber-400 ml-3 text-lg drop-shadow-none">✔</span>
                       {feature}
                     </li>
@@ -191,8 +191,8 @@ export default function Home() {
             </article>
           ))}
 
-          {/* ⭐️ كارت التقييم المضيء */}
-          <div className="bg-white/[0.08] backdrop-blur-md p-12 rounded-[40px] text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-white/20">
+          {/* ⭐️ كارت التقييم */}
+          <div className="bg-gradient-to-b from-black/70 to-black/30 backdrop-blur-sm p-12 rounded-[40px] text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-white/10">
             <div className="text-amber-400 text-4xl mb-4 drop-shadow-md">★★★★★</div>
             <p className="text-xl font-black text-white leading-relaxed italic drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
             <p className="text-amber-300 font-black mt-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">— ابو فهد (حي الملقا)</p>
