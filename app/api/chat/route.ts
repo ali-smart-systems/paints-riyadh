@@ -1,45 +1,54 @@
 import { NextResponse } from "next/server";
 
+// إعداد الـ Runtime ليعمل على Edge Functions (الأسرع في Vercel)
+export const runtime = 'edge';
+
 export async function POST(req: Request) {
-    // نستقبل رسالة العميل + رقم الرسالة
-    const { message, messageCount } = await req.json();
-    const apiKey = process.env.GEMINI_API_KEY;
-
-    // الأوامر الأساسية الثابتة
-    let systemPrompt = `أنت المعلم ابو نشمي، خبير دهانات وديكورات بالرياض.
-  قواعد صارمة للرد:
-  1. أجب باختصار شديد جداً (في سطر أو سطرين كحد أقصى).
-  2. اجعل أسلوبك يشبه رسائل الواتساب السريعة.
-  3. تحدث بلهجة سعودية محببة (يا هلا، أبشر، من عيوني).
-  4. أجب على سؤال العميل مباشرة بدون مقدمات.`;
-
-    // اللمسة الهندسية: إذا كان رقم الرسالة يقبل القسمة على 4 بدون باقٍ
-    if (messageCount && messageCount % 4 === 0) {
-        systemPrompt += `\n5. (مهم جداً): في نهاية هذا الرد، اطلب من العميل بوضوح أن يتصل على 0536242933 للمعاينة المجانية وتطبيق الخصم.`;
-    } else {
-        systemPrompt += `\n5. (تحذير صارم): لا تطلب من العميل الاتصال ولا تذكر رقم الهاتف أبداً في هذا الرد. أجب على السؤال فقط.`;
-    }
-
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+        const { message, messageCount } = await req.json();
+        const apiKey = process.env.GEMINI_API_KEY;
+
+        if (!apiKey) {
+            throw new Error("API Key missing");
+        }
+
+        // إعداد التايم آوت (5 ثوانٍ) لمنع تعليق السيرفر تحت الضغط
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+
+        // التعليمات البرمجية للمقاول
+        const systemPrompt = `أنت المعلم ابو نشمي، خبير دهانات وديكورات بالرياض.
+        قواعد الرد:
+        1. أجب باختصار شديد جداً (سطر أو سطرين).
+        2. استخدم لهجة سعودية مهنية وودودة (يا هلا، أبشر، من عيوني).
+        3. أجب على السؤال مباشرة دون مقدمات.
+        4. ${ (messageCount && messageCount % 4 === 0) 
+            ? "في نهاية الرد اطلب من العميل الاتصال على 0536242933 للمعاينة." 
+            : "لا تذكر رقم الهاتف أبداً." }`;
+
+        // استدعاء Gemini (استخدام إصدار Flash للسرعة القصوى)
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 contents: [{ parts: [{ text: `${systemPrompt}\n\nالعميل يقول: ${message}` }] }]
-            })
+            }),
+            signal: controller.signal
         });
 
+        clearTimeout(timeout);
+
+        if (!response.ok) throw new Error("Gemini API Error");
+
         const data = await response.json();
+        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "أبشر يا غالي، اتصل بي على 0536242933 وأنا أخدمك!";
 
-        if (data.error) {
-            console.error("Google API Error:", data.error.message);
-            return NextResponse.json({ reply: "المعذرة يا غالي، عندي ضغط رسايل حالياً.. تقدر تتصل علي مباشرة على 0536242933 وأبشر بسعدك!" });
-        }
-
-        const reply = data.candidates[0].content.parts[0].text;
         return NextResponse.json({ reply });
 
     } catch (error) {
-        return NextResponse.json({ reply: "المعذرة يا غالي، عندي ضغط رسايل حالياً.. تقدر تتصل علي مباشرة على 0536242933 وأبشر بسعدك!" });
+        // رد الطوارئ الذكي: إذا حدث أي ضغط أو خطأ، نحول العميل للاتصال مباشرة
+        return NextResponse.json({ 
+            reply: "أبشر يا غالي، حالياً عندي ضغط رسايل، يسعدني اتصالك مباشرة على 0536242933 وأبشر بسعدك!" 
+        });
     }
 }
