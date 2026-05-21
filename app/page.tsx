@@ -76,7 +76,7 @@ const SECTIONS = [
   {
     id: 9,
     title: "استشارات هندسية للدهانات",
-    desc: "محتار في اختيار الألوان؟ خبراؤنا يقدمون لك استشارة متكاملة لتوزيع الألوان بناءً على مساحة الغرف، ومسارات الإضاءة الطبيعية والصناعية.",
+    desc: "محتار في اختيار الألوان？ خبراؤنا يقدمون لك استشارة متكاملة لتوزيع الألوان بناءً على مساحة الغرف، ومسارات الإضاءة الطبيعية والصناعية.",
     features: ["مطابقة الألوان مع لون الأثاث والأرضيات", "اختيار نوع الدهان المناسب لاستخدام كل غرفة", "زيارة ميدانية لرفع المقاسات وتقديم العينات"],
     link: "/painting-consultation", imgNum: 9
   },
@@ -91,115 +91,117 @@ const SECTIONS = [
 
 export default function Home() {
   return (
-    <main className="pb-[140px] bg-brand-primary min-h-screen text-right font-sans" dir="rtl">
+    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-950" dir="rtl">
       <Script
         id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
 
-      {/* 🌟 الهيدر الملكي */}
-      <header className="relative z-0 min-h-[500px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] shadow-strong border-b border-slate-800 overflow-hidden">
-
+      {/* 🖼️ الصورة الخلفية الثابتة للموقع بالكامل تعبيراً عن بيئة الديكور الاحترافية */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
         <Image
           src="/images/paint18.webp"
-          alt="خلفية دهانات وديكورات الرياض"
+          alt="خلفية ديكورات فخمة"
           fill
           priority
-          sizes="100vw"
-          className="object-cover -z-10"
+          className="object-cover opacity-35"
         />
+        {/* طبقة تظليل متدرجة ناعمة تضمن تباين النصوص مع حركة السكرول */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/60 to-slate-950/90"></div>
+      </div>
 
-        {/* تظليل خفيف جداً فقط لضمان قراءة النص دون إخفاء ملامح الصورة */}
-        <div className="absolute inset-0 bg-black/20 -z-10"></div>
+      <div className="relative z-10">
+        {/* 🌟 الهيدر الملكي */}
+        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/10 overflow-hidden bg-slate-950/20 backdrop-blur-sm">
+          <div className="bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-black mb-6 shadow-md animate-pulse">
+            خصم حصري 20% لجميع أحياء شمال الرياض ⚡
+          </div>
 
-        <div className="bg-brand-accent text-white px-6 py-2 rounded-full text-sm font-black mb-6 shadow-soft animate-pulse">
-          خصم حصري 20% لجميع أحياء شمال الرياض ⚡
-        </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight drop-shadow-lg">
+            مـعلم دهانات <br />
+            <span className="text-brand-gold bg-gradient-to-r from-amber-400 to-yellow-600 bg-clip-text text-transparent">وديكورات الرياض</span>
+          </h1>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
-          مـعلم دهانات <br />
-          <span className="text-brand-gold">وديكورات الرياض</span>
-        </h1>
+          <p className="max-w-3xl mx-auto text-lg text-amber-50/90 leading-relaxed font-bold mb-8 drop-shadow-md">
+            نحول رؤيتك إلى واقع بأيدي خبراء. تشطيبات متكاملة، دهانات حديثة، وديكورات فخمة تضفي طابعاً ملكياً على مساحتك. نضمن لك أعلى معايير الجودة والتزاماً صارماً بموعد التسليم.
+          </p>
 
-        <p className="max-w-3xl mx-auto text-lg text-slate-100 leading-relaxed font-bold mb-8 drop-shadow-2xl">
-          نحول رؤيتك إلى واقع بأيدي خبراء. تشطيبات متكاملة، دهانات حديثة، وديكورات فخمة تضفي طابعاً ملكياً على مساحتك. نضمن لك أعلى معايير الجودة والتزاماً صارماً بموعد التسليم.
-        </p>
+          <div className="flex flex-col items-center">
+            <p className="text-white text-base mb-2 font-bold drop-shadow-sm">📞 احجز استشارتك المجانية الآن</p>
+            <a href={`tel:${PHONE_NUMBER}`}
+              className="text-5xl md:text-7xl font-black text-brand-gold bg-gradient-to-r from-amber-300 to-yellow-500 bg-clip-text text-transparent drop-shadow-xl tracking-wider hover:scale-105 transition-transform">
+              {PHONE_NUMBER}
+            </a>
+          </div>
+        </header>
 
-        <div className="flex flex-col items-center">
-          <p className="text-white text-base mb-2 font-bold drop-shadow-md">📞 احجز استشارتك المجانية الآن</p>
-          <a href={`tel:${PHONE_NUMBER}`}
-            className="text-5xl md:text-7xl font-black text-brand-gold drop-shadow-2xl tracking-wider hover:scale-105 transition-transform">
-            {PHONE_NUMBER}
-          </a>
-        </div>
-      </header>
+        {/* 🎥 فيديو الواجهة */}
+        <section className="px-5 max-w-6xl mx-auto -mt-24">
+          <div className="rounded-[35px] overflow-hidden h-[350px] bg-black shadow-2xl border border-white/10">
+            <video
+              autoPlay muted loop playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/videos/video1.webm" type="video/webm" />
+              <source src="/videos/video1.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
 
-      {/* 🎥 فيديو الواجهة */}
-      <section className="px-5 max-w-6xl mx-auto -mt-24 relative z-10">
-        <div className="rounded-[35px] overflow-hidden h-[350px] bg-black shadow-strong border border-slate-800">
-          <video
-            autoPlay muted loop playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/video1.webm" type="video/webm" />
-            <source src="/videos/video1.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
+        {/* 🎨 معرض الأقسام - كروت عائمة بتأثير ग्लास ميرفيزم */}
+        <section className="px-5 max-w-6xl mx-auto mt-20">
+          {SECTIONS.map((section) => (
+            <article key={section.id} className="flex flex-wrap items-stretch bg-slate-950/40 backdrop-blur-xl rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/10 hover:border-amber-500/30 transition-all duration-300">
 
-      {/* 🎨 معرض الأقسام */}
-      <section className="px-5 max-w-6xl mx-auto mt-20 relative z-0">
-        {SECTIONS.map((section) => (
-          <article key={section.id} className="flex flex-wrap items-stretch bg-slate-900 rounded-[40px] overflow-hidden mb-16 shadow-strong border border-slate-800">
-
-            {/* 📝 قسم النص (يمين) */}
-            <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
-              <h2 className="text-3xl font-black text-white mb-4">
-                <span className="text-brand-gold ml-2">|</span>{section.title}
-              </h2>
-              <p className="text-slate-400 text-base leading-loose mb-6">
-                {section.desc}
-              </p>
-              <ul className="space-y-3 mb-10">
-                {section.features.map((feature, i) => (
-                  <li key={i} className="flex items-start text-slate-300 font-medium">
-                    <span className="text-brand-success ml-3 text-lg">✔</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a href={section.link} className="inline-block bg-brand-gold text-white px-8 py-4 rounded-full font-black shadow-soft hover:bg-yellow-700 transition-colors w-fit">
-                الدخول لمعرض القسم ←
-              </a>
-            </div>
-
-            {/* 🖼️ قسم الصورة (يسار) */}
-            <div className="flex-1 min-w-[300px] relative min-h-[400px] group">
-              <Image
-                src={`/images/paint${section.imgNum}.webp`}
-                alt={section.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-brand-primary/80 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="bg-slate-950/80 backdrop-blur-md border border-brand-gold/50 text-brand-gold px-6 py-3 rounded-2xl font-bold shadow-strong">
-                  👆 اضغط على الصورة لفتح {section.title}
-                </div>
+              {/* 📝 قسم النص (يمين) */}
+              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
+                <h2 className="text-3xl font-black text-white mb-4">
+                  <span className="text-amber-500 ml-2">|</span>{section.title}
+                </h2>
+                <p className="text-amber-50/80 text-base leading-loose mb-6">
+                  {section.desc}
+                </p>
+                <ul className="space-y-3 mb-10">
+                  {section.features.map((feature, i) => (
+                    <li key={i} className="flex items-start text-amber-100/90 font-medium">
+                      <span className="text-amber-500 ml-3 text-lg">✔</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a href={section.link} className="inline-block bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-8 py-4 rounded-full font-black shadow-lg hover:brightness-110 transition-all w-fit">
+                  الدخول لمعرض القسم ←
+                </a>
               </div>
-              <a href={section.link} className="absolute inset-0" title={section.title}></a>
-            </div>
-          </article>
-        ))}
 
-        {/* ⭐️ كارت التقييم */}
-        <div className="bg-slate-900 p-12 rounded-[40px] text-center shadow-strong border border-slate-800">
-          <div className="text-brand-gold text-4xl mb-4">★★★★★</div>
-          <p className="text-xl font-bold text-white leading-relaxed italic">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
-          <p className="text-slate-400 mt-6">— ابو فهد (حي الملقا)</p>
-        </div>
-      </section>
+              {/* 🖼️ قسم الصورة (يسار) */}
+              <div className="flex-1 min-w-[300px] relative min-h-[400px] group overflow-hidden">
+                <Image
+                  src={`/images/paint${section.imgNum}.webp`}
+                  alt={section.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-slate-950/70 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-slate-950/90 backdrop-blur-md border border-amber-500/40 text-amber-400 px-6 py-3 rounded-2xl font-bold shadow-2xl">
+                    👆 اضغط على الصورة لفتح {section.title}
+                  </div>
+                </div>
+                <a href={section.link} className="absolute inset-0" title={section.title}></a>
+              </div>
+            </article>
+          ))}
+
+          {/* ⭐️ كارت التقييم */}
+          <div className="bg-slate-950/50 backdrop-blur-xl p-12 rounded-[40px] text-center shadow-2xl border border-white/10">
+            <div className="text-amber-500 text-4xl mb-4">★★★★★</div>
+            <p className="text-xl font-bold text-white leading-relaxed italic">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
+            <p className="text-amber-200/60 mt-6">— ابو فهد (حي الملقا)</p>
+          </div>
+        </section>
+      </div>
 
       <ContactButtons phoneNumber={PHONE_NUMBER} />
     </main>
