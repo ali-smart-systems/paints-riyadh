@@ -102,7 +102,7 @@ export default function Home() {
       <header className="relative z-0 min-h-[500px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] shadow-strong border-b border-slate-800 overflow-hidden">
 
         <Image
-          src="/images/paint55.webp"
+          src="/images/paint18.webp"
           alt="خلفية دهانات وديكورات الرياض"
           fill
           priority

@@ -33,7 +33,7 @@ export default function LatestWorks() {
             {/* 🌟 الهيدر الملكي الفخم - مطابق للرئيسية */}
             <header className="relative min-h-[500px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] shadow-strong border-b border-slate-800 overflow-hidden">
                 <Image
-                    src="/images/paint18.webp"
+                    src="/images/paint55.webp"
                     alt="خلفية معرض الأعمال"
                     fill
                     priority
