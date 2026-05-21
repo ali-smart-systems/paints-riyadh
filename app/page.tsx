@@ -90,28 +90,27 @@ const SECTIONS = [
 
 export default function Home() {
   return (
-    <main className="pb-[140px] min-h-screen text-right font-sans relative" dir="rtl">
+    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-900" dir="rtl">
       <Script
         id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
 
-      {/* 🖼️ الصورة الخلفية: تم جعلها واضحة 100% مع تظليل خفيف وموحد لضمان القراءة بدون تعتيم */}
+      {/* 🖼️ الصورة الخلفية: صافية 100% بدون أي ضبابية أو تعتيم رمادي */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Image
           src="/images/paint18.webp"
           alt="خلفية ديكورات فخمة مضيئة"
           fill
           priority
-          className="object-cover opacity-100" 
+          className="object-cover" 
         />
-        <div className="absolute inset-0 bg-black/25"></div>
       </div>
 
       <div className="relative z-10">
-        {/* 🌟 الهيدر الملكي */}
-        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/20 overflow-hidden bg-black/10 backdrop-blur-[2px]">
+        {/* 🌟 الهيدر الملكي: تدرج لوني داكن من الأعلى فقط لحماية النص، ثم يختفي ليترك الصورة نقية */}
+        <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/10 bg-gradient-to-b from-black/80 via-black/40 to-transparent">
           <div className="bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-black mb-6 shadow-md animate-pulse">
             خصم حصري 20% لجميع أحياء شمال الرياض ⚡
           </div>
@@ -147,12 +146,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 🎨 معرض الأقسام - تم تفتيح الكروت لتسمح بمرور الإضاءة المبهجة */}
+        {/* 🎨 معرض الأقسام */}
         <section className="px-5 max-w-6xl mx-auto mt-20">
           {SECTIONS.map((section) => (
-            <article key={section.id} className="flex flex-wrap items-stretch bg-black/30 backdrop-blur-lg rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/20 hover:border-amber-400/50 transition-all duration-300">
+            <article key={section.id} className="flex flex-wrap items-stretch bg-slate-950/85 rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/10 hover:border-amber-400/50 transition-all duration-300">
 
-              {/* 📝 قسم النص (يمين) - تم إزالة الخلفية الداكنة الإضافية من هنا */}
+              {/* 📝 قسم النص (يمين) */}
               <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl font-black text-white mb-4 drop-shadow-md">
                   <span className="text-amber-400 ml-2">|</span>{section.title}
@@ -193,7 +192,7 @@ export default function Home() {
           ))}
 
           {/* ⭐️ كارت التقييم */}
-          <div className="bg-black/30 backdrop-blur-lg p-12 rounded-[40px] text-center shadow-2xl border border-white/20">
+          <div className="bg-slate-950/85 p-12 rounded-[40px] text-center shadow-2xl border border-white/10">
             <div className="text-amber-400 text-4xl mb-4">★★★★★</div>
             <p className="text-xl font-black text-white leading-relaxed italic drop-shadow-sm">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
             <p className="text-amber-200 font-bold mt-6 drop-shadow-sm">— ابو فهد (حي الملقا)</p>
