@@ -41,7 +41,7 @@ const NawafChat = () => {
             const data = await res.json();
             setMessages(prev => [...prev, { role: 'bot', text: data.reply }]);
         } catch (error) {
-            setMessages(prev => [...prev, { role: 'bot', text: 'المعذرة، عندي ضغط رسايل حالياً.. كلمني مباشرة 0559771963' }]);
+            setMessages(prev => [...prev, { role: 'bot', text: 'المعذرة، عندي ضغط رسايل حالياً.. كلمني مباشرة 0536242933' }]);
         } finally {
             setLoading(false);
         }
