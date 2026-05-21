@@ -62,7 +62,7 @@ const SECTIONS = [
     id: 7,
     title: "تركيب ورق جدران احترافي",
     desc: "دقة متناهية في قص وتركيب ورق الجدران لضمان استمرارية النقشات دون أي فواصل مرئية أو فقاعات هواء، ليظهر الجدار كقطعة واحدة.",
-    features: ["استخدام غراء إيطالي أصلي مضاد للفطريات", "تركيب جميع الأنواع (ورقي، فينيل, مخملي)", "تجهيز الجدار مسبقاً لضمان الثبات التام"],
+    features: ["استخدام غراء إيطالي أصلي مضاد للفطريات", "تركيب جميع الأنواع (ورقي، فينيل، مخملي)", "تجهيز الجدار مسبقاً لضمان الثبات التام"],
     link: "/wallpaper-install", imgNum: 7
   },
   {
@@ -90,14 +90,14 @@ const SECTIONS = [
 
 export default function Home() {
   return (
-    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-950" dir="rtl">
+    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-900" dir="rtl">
       <Script
         id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
 
-      {/* 🖼️ الخلفية الثابتة الفاخرة */}
+      {/* 🖼️ الصورة الخلفية: صافية 100% بدون أي ضبابية أو تعتيم رمادي */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Image
           src="/images/paint18.webp"
@@ -109,7 +109,7 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-        {/* 🌟 الهيدر الأعلى الممتاز */}
+        {/* 🌟 الهيدر الملكي: تدرج لوني داكن من الأعلى فقط لحماية النص، ثم يختفي ليترك الصورة نقية */}
         <header className="relative min-h-[550px] flex flex-col items-center justify-center text-center px-5 pt-20 pb-40 rounded-b-[50px] border-b border-white/10 bg-gradient-to-b from-black/80 via-black/40 to-transparent">
           <div className="bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-black mb-6 shadow-md animate-pulse">
             خصم حصري 20% لجميع أحياء شمال الرياض ⚡
@@ -146,28 +146,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 🎨 معرض الأقسام - بتعديل التدرج المضيء والواضح للغاية */}
+        {/* 🎨 معرض الأقسام - تم تحويل الكروت إلى زجاج أنيق */}
         <section className="px-5 max-w-6xl mx-auto mt-20">
           {SECTIONS.map((section) => (
-            <article key={section.id} className="flex flex-wrap items-stretch bg-gradient-to-b from-black/70 via-black/50 to-transparent backdrop-blur-sm rounded-[40px] overflow-hidden mb-16 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-white/10 hover:border-amber-400/50 transition-all duration-300">
+            <article key={section.id} className="flex flex-wrap items-stretch bg-black/40 backdrop-blur-lg rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/10 hover:border-amber-400/50 transition-all duration-300">
 
-              {/* 📝 قسم النص الواضح جداً (يمين) */}
+              {/* 📝 قسم النص (يمين) */}
               <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl font-black text-white mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                <h2 className="text-3xl font-black text-white mb-4 drop-shadow-md">
                   <span className="text-amber-400 ml-2">|</span>{section.title}
                 </h2>
-                <p className="text-slate-100 text-base leading-loose font-bold mb-6 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                <p className="text-white text-base leading-loose font-medium mb-6 drop-shadow-sm">
                   {section.desc}
                 </p>
                 <ul className="space-y-3 mb-10">
                   {section.features.map((feature, i) => (
-                    <li key={i} className="flex items-start text-slate-100 font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
-                      <span className="text-amber-400 ml-3 text-lg drop-shadow-none">✔</span>
+                    <li key={i} className="flex items-start text-amber-50 font-semibold drop-shadow-sm">
+                      <span className="text-amber-400 ml-3 text-lg">✔</span>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <a href={section.link} className="inline-block bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-8 py-4 rounded-full font-black shadow-xl hover:brightness-110 transition-all w-fit">
+                <a href={section.link} className="inline-block bg-gradient-to-r from-amber-500 to-yellow-600 text-white px-8 py-4 rounded-full font-black shadow-lg hover:brightness-110 transition-all w-fit">
                   الدخول لمعرض القسم ←
                 </a>
               </div>
@@ -181,8 +181,8 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="bg-black/90 border border-amber-400/40 text-amber-400 px-6 py-3 rounded-2xl font-bold shadow-2xl">
+                <div className="absolute inset-0 bg-slate-950/60 flex items-end justify-center p-8 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-slate-950/90 backdrop-blur-md border border-amber-400/40 text-amber-400 px-6 py-3 rounded-2xl font-bold shadow-2xl">
                     👆 اضغط على الصورة لفتح {section.title}
                   </div>
                 </div>
@@ -191,11 +191,11 @@ export default function Home() {
             </article>
           ))}
 
-          {/* ⭐️ كارت التقييم */}
-          <div className="bg-gradient-to-b from-black/70 to-black/30 backdrop-blur-sm p-12 rounded-[40px] text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] border border-white/10">
-            <div className="text-amber-400 text-4xl mb-4 drop-shadow-md">★★★★★</div>
-            <p className="text-xl font-black text-white leading-relaxed italic drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
-            <p className="text-amber-300 font-black mt-6 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">— ابو فهد (حي الملقا)</p>
+          {/* ⭐️ كارت التقييم - زجاجي أيضاً */}
+          <div className="bg-black/40 backdrop-blur-lg p-12 rounded-[40px] text-center shadow-2xl border border-white/10">
+            <div className="text-amber-400 text-4xl mb-4">★★★★★</div>
+            <p className="text-xl font-black text-white leading-relaxed italic drop-shadow-sm">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
+            <p className="text-amber-200 font-bold mt-6 drop-shadow-sm">— ابو فهد (حي الملقا)</p>
           </div>
         </section>
       </div>
