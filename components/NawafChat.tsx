@@ -9,17 +9,23 @@ const NawafChat = () => {
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null); // إضافة مرجع لحقل الإدخال
 
-    // الاستماع لإشارة الفتح القادمة من الأزرار
     useEffect(() => {
         const toggleChat = () => setIsOpen(prev => !prev);
         window.addEventListener('toggle-nawaf-chat', toggleChat);
         return () => window.removeEventListener('toggle-nawaf-chat', toggleChat);
     }, []);
 
+    // التركيز التلقائي عند فتح الشات
     useEffect(() => {
-        if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }, [messages]);
+        if (isOpen && inputRef.current) {
+            inputRef.current.focus();
+        }
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+        }
+    }, [isOpen, messages]);
 
     const handleSend = async () => {
         if (!input.trim() || loading) return;
@@ -41,40 +47,33 @@ const NawafChat = () => {
             const data = await res.json();
             setMessages(prev => [...prev, { role: 'bot', text: data.reply }]);
         } catch (error) {
-            setMessages(prev => [...prev, { role: 'bot', text: 'المعذرة، عندي ضغط رسايل حالياً.. كلمني مباشرة 0536242933' }]);
+            setMessages(prev => [...prev, { role: 'bot', text: 'المعذرة يا غالي، اتصل بي مباشرة 0536242933 وأبشر بسعدك!' }]);
         } finally {
             setLoading(false);
         }
     };
 
-    // إذا كانت النافذة مغلقة، لا ترجع أي شيء (لا يوجد زر)
     if (!isOpen) return null;
 
     return (
         <div className="fixed bottom-[30px] left-[100px] z-[999999] w-[320px] h-[450px] bg-white rounded-[20px] shadow-2xl flex flex-col border border-slate-200 overflow-hidden font-sans transition-all duration-300" dir="rtl">
-
-            {/* هيدر الشات */}
             <div className="bg-[#0f172a] text-[#fbbf24] p-4 text-center font-black text-lg border-b border-[#fbbf24]/30 flex justify-between items-center">
-                <span>مساعد ابو نشمي للديكورات</span>
+                <span>مساعد ابو نشمي</span>
                 <button onClick={() => setIsOpen(false)} className="text-white hover:text-red-400 text-xl">✕</button>
             </div>
 
-            {/* منطقة الرسائل */}
             <div ref={scrollRef} className="flex-1 p-4 bg-slate-50 overflow-y-auto flex flex-col gap-3">
                 {messages.map((msg, i) => (
-                    <div key={i} className={`px-4 py-2.5 rounded-2xl max-w-[85%] text-[15px] shadow-sm ${msg.role === 'user'
-                        ? 'self-end bg-[#e63946] text-white rounded-br-none'
-                        : 'self-start bg-white text-slate-800 border border-slate-200 rounded-bl-none'
-                        }`}>
+                    <div key={i} className={`px-4 py-2.5 rounded-2xl max-w-[85%] text-[15px] shadow-sm ${msg.role === 'user' ? 'self-end bg-[#e63946] text-white rounded-br-none' : 'self-start bg-white text-slate-800 border border-slate-200 rounded-bl-none'}`}>
                         {msg.text}
                     </div>
                 ))}
-                {loading && <div className="text-xs text-slate-500 font-medium animate-pulse self-start">جاري الكتابة...</div>}
+                {loading && <div className="text-xs text-slate-500 font-medium animate-pulse self-start mr-2">أبو نشمي يكتب...</div>}
             </div>
 
-            {/* حقل الإدخال */}
             <div className="p-3 bg-white border-t border-slate-200 flex gap-2">
                 <input
+                    ref={inputRef} // ربط المرجع
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -84,9 +83,10 @@ const NawafChat = () => {
                 />
                 <button
                     onClick={handleSend}
-                    className="bg-[#e63946] text-white px-5 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-md"
+                    disabled={loading} // تعطيل الزر أثناء التحميل
+                    className={`px-5 rounded-xl font-bold shadow-md transition-colors ${loading ? 'bg-slate-400' : 'bg-[#e63946] hover:bg-red-700'} text-white`}
                 >
-                    إرسال
+                    {loading ? '...' : 'إرسال'}
                 </button>
             </div>
         </div>
