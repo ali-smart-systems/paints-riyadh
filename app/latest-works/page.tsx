@@ -19,7 +19,7 @@ const JSON_LD = {
 };
 
 // 8 صور حصرية لهذه الصفحة (من 19 إلى 26)
-const GALLERY_IMAGES = [19, 20, 21, 22, 23, 24, 25, 26];
+const GALLERY_IMAGES = [31, 32, 33, 34, 35, 36, 37, 38];
 
 export default function LatestWorks() {
     return (
