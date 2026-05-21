@@ -3,7 +3,6 @@ import Script from 'next/script';
 import Image from 'next/image';
 import ContactButtons from '../components/ContactButtons';
 
-// فصل البيانات الثابتة خارج المكون لتحسين الأداء
 const PHONE_NUMBER = "0536242933";
 
 const JSON_LD = {
@@ -91,24 +90,23 @@ const SECTIONS = [
 
 export default function Home() {
   return (
-    <main className="pb-[140px] min-h-screen text-right font-sans relative bg-slate-900" dir="rtl">
+    <main className="pb-[140px] min-h-screen text-right font-sans relative" dir="rtl">
       <Script
         id="structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
       />
 
-      {/* 🖼️ خلفية الديكور المشرقة والواضحة تماماً بطلب الزبون */}
+      {/* 🖼️ الصورة الخلفية: تم جعلها واضحة 100% مع تظليل خفيف وموحد لضمان القراءة بدون تعتيم */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Image
           src="/images/paint18.webp"
           alt="خلفية ديكورات فخمة مضيئة"
           fill
           priority
-          className="object-cover opacity-75 brightness-95" 
+          className="object-cover opacity-100" 
         />
-        {/* تظليل متدرج ناعم جداً ومشرق لحفظ تباين الخطوط دون تعتيم البيئة العامة */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-slate-900/30 to-black/50"></div>
+        <div className="absolute inset-0 bg-black/25"></div>
       </div>
 
       <div className="relative z-10">
@@ -149,13 +147,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 🎨 معرض الأقسام - كروت زجاجية شفافة وعاكسة لإضاءة الديكور */}
+        {/* 🎨 معرض الأقسام - تم تفتيح الكروت لتسمح بمرور الإضاءة المبهجة */}
         <section className="px-5 max-w-6xl mx-auto mt-20">
           {SECTIONS.map((section) => (
-            <article key={section.id} className="flex flex-wrap items-stretch bg-slate-950/40 backdrop-blur-xl rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/20 hover:border-amber-400/50 transition-all duration-300">
+            <article key={section.id} className="flex flex-wrap items-stretch bg-black/30 backdrop-blur-lg rounded-[40px] overflow-hidden mb-16 shadow-2xl border border-white/20 hover:border-amber-400/50 transition-all duration-300">
 
-              {/* 📝 قسم النص (يمين) */}
-              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center bg-black/20">
+              {/* 📝 قسم النص (يمين) - تم إزالة الخلفية الداكنة الإضافية من هنا */}
+              <div className="flex-1 min-w-[300px] p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl font-black text-white mb-4 drop-shadow-md">
                   <span className="text-amber-400 ml-2">|</span>{section.title}
                 </h2>
@@ -195,7 +193,7 @@ export default function Home() {
           ))}
 
           {/* ⭐️ كارت التقييم */}
-          <div className="bg-slate-950/40 backdrop-blur-xl p-12 rounded-[40px] text-center shadow-2xl border border-white/20">
+          <div className="bg-black/30 backdrop-blur-lg p-12 rounded-[40px] text-center shadow-2xl border border-white/20">
             <div className="text-amber-400 text-4xl mb-4">★★★★★</div>
             <p className="text-xl font-black text-white leading-relaxed italic drop-shadow-sm">"شغل احترافي، دقة في المواعيد، ونتيجة فاخرة جداً."</p>
             <p className="text-amber-200 font-bold mt-6 drop-shadow-sm">— ابو فهد (حي الملقا)</p>
