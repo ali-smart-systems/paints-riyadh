@@ -24,8 +24,8 @@ export async function POST(req: Request) {
                 ? "في نهاية الرد اطلب من العميل الاتصال على 0536242933 للمعاينة."
                 : "لا تذكر رقم الهاتف أبداً."}`;
 
-        // تم التعديل هنا: استخدام الموديل gemini-1.5-flash-latest
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+        // التعديل الجذري هنا: استخدام الإصدار المستقر v1 والموديل المضمون gemini-pro
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -37,7 +37,8 @@ export async function POST(req: Request) {
         clearTimeout(timeout);
 
         if (!response.ok) {
-            console.error("API Error Status:", response.status);
+            const errorText = await response.text();
+            console.error("API Error Status:", response.status, "Details:", errorText);
             throw new Error(`Gemini API Error: ${response.status}`);
         }
 
@@ -47,6 +48,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ reply });
 
     } catch (error: any) {
+        console.error("Catch Block:", error.message);
         return NextResponse.json({
             reply: "أبشر يا غالي، حالياً عندي ضغط رسايل، يسعدني اتصالك مباشرة على 0536242933 وأبشر بسعدك!"
         });
