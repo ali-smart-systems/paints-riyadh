@@ -24,8 +24,8 @@ export async function POST(req: Request) {
                 ? "في نهاية الرد اطلب من العميل الاتصال على 0536242933 للمعاينة."
                 : "لا تذكر رقم الهاتف أبداً."}`;
 
-        // التعديل الجذري هنا: استخدام الإصدار المستقر v1 والموديل المضمون gemini-pro
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`, {
+        // التعديل الحاسم هنا: استخدام الموديل الحديث والمدعوم gemini-2.5-flash
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
