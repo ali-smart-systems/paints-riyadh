@@ -22,9 +22,9 @@ export async function POST(req: Request) {
         1. أجب باختصار شديد جداً (سطر أو سطرين).
         2. استخدم لهجة سعودية مهنية وودودة (يا هلا، أبشر، من عيوني).
         3. أجب على السؤال مباشرة دون مقدمات.
-        4. ${ (messageCount && messageCount % 4 === 0) 
-            ? "في نهاية الرد اطلب من العميل الاتصال على 0536242933 للمعاينة." 
-            : "لا تذكر رقم الهاتف أبداً." }`;
+        4. ${(messageCount && messageCount % 4 === 0)
+                ? "في نهاية الرد اطلب من العميل الاتصال على 0536242933 للمعاينة."
+                : "لا تذكر رقم الهاتف أبداً."}`;
 
         // استدعاء Gemini (استخدام إصدار Flash للسرعة القصوى)
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
@@ -47,8 +47,8 @@ export async function POST(req: Request) {
 
     } catch (error) {
         // رد الطوارئ الذكي: إذا حدث أي ضغط أو خطأ، نحول العميل للاتصال مباشرة
-        return NextResponse.json({ 
-            reply: "أبشر يا غالي، حالياً عندي ضغط رسايل، يسعدني اتصالك مباشرة على 0536242933 وأبشر بسعدك!" 
+        return NextResponse.json({
+            reply: "أبشر يا غالي، حالياً عندي ضغط رسايل، يسعدني اتصالك مباشرة على 0536242933 وأبشر بسعدك!"
         });
     }
 }
