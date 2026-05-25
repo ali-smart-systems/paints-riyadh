@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     google: 'srE7zYz29bthebfKw-8K44rgGBfFAHoTBP1p0qvxN9Q',
   },
   openGraph: {
-    title: 'معلم دهانات الرياض - خبرة وإبداع في الديكورات',
+    title: 'ديكورات ودهانات شغف اللحظة',
     description: 'تنفيذ كافة أعمال البويات والديكور (بديل رخام، فوم، خشب) بالرياض بأحدث التقنيات.',
     url: 'https://www.paints-riyadh.com',
-    siteName: 'دهانات وديكورات الرياض',
+    siteName: 'ديكورات ودهانات شغف اللحظة',
     locale: 'ar_SA',
     type: 'website',
   },
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "معلم دهانات وديكورات الرياض",
+    "name": "ديكورات ودهانات شغف اللحظة",
     "url": "https://www.paints-riyadh.com",
     "telephone": "+966536242933",
     "areaServed": [
