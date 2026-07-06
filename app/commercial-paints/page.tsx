@@ -79,7 +79,7 @@ export default function CommercialPaints() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
-                    دهانات <span className="text-brand-gold">المشاريع التجارية</span>
+                      شيبورد <span className="text-brand-gold">وبديل الخشب</span>
                 </h1>
 
                 <p className="max-w-3xl mx-auto text-lg text-slate-100 leading-relaxed font-bold mb-8 drop-shadow-md">
