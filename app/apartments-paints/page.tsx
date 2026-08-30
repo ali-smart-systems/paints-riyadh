@@ -160,4 +160,4 @@ export default function ApartmentsPaints() {
             <ContactButtons phoneNumber={PHONE_NUMBER} />
         </main>
     );
-
+}
