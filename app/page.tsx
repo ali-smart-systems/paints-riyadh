@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  openGraph: {
+    url: '/',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
