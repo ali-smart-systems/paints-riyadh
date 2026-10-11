@@ -27,7 +27,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ديكورات ودهانات شغف اللحظة',
     description: 'تنفيذ كافة أعمال البويات والديكور (بديل رخام، فوم، خشب) بالرياض بأحدث التقنيات.',
-    url: 'https://www.paints-riyadh.com',
     siteName: 'ديكورات ودهانات شغف اللحظة',
     locale: 'ar_SA',
     type: 'website',
