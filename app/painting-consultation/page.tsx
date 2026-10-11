@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/painting-consultation',
   },
+  openGraph: {
+    title: 'استشارات دهانات بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'استشارات دهانات وديكورات بالرياض، المساعدة في اختيار ألوان الجدران وأنواع الدهانات والتشطيبات المناسبة للمنازل والفلل والمكاتب.',
+    url: '/painting-consultation',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
