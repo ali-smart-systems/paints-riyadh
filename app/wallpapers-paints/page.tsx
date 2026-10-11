@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/wallpapers-paints',
   },
+  openGraph: {
+    title: 'تصاميم ورق جدران بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'استعرض تصاميم ورق جدران عصرية وفاخرة بالرياض للمجالس وغرف النوم والصالات، مع أفكار ديكور متنوعة تناسب المنازل والفلل.',
+    url: '/wallpapers-paints',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
