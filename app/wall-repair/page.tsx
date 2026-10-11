@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/wall-repair',
   },
+  openGraph: {
+    title: 'معلم ترميم جدران بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'خدمات ترميم وإصلاح الجدران بالرياض، معالجة التشققات وتقشر الدهانات وتجهيز الأسطح لإعادة الدهان، مع تشطيبات داخلية وخارجية احترافية.',
+    url: '/wall-repair',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
