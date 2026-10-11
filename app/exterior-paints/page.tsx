@@ -1,4 +1,14 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'معلم دهانات خارجية بالرياض | ديكورات ودهانات شغف اللحظة',
+  description:
+    'تنفيذ دهانات خارجية بالرياض للفلل والمنازل والواجهات، باستخدام دهانات مقاومة للشمس والعوامل الجوية مع تشطيبات احترافية.',
+  alternates: {
+    canonical: '/exterior-paints',
+  },
+};
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
