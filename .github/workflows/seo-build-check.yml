@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - fix/seo-audit-2026
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
