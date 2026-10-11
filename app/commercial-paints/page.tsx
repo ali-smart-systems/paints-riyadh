@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/commercial-paints',
   },
+  openGraph: {
+    title: 'دهانات محلات ومكاتب بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'تنفيذ دهانات المحلات التجارية والمكاتب والمنشآت بالرياض، مع تشطيبات داخلية وخارجية وتنسيق ألوان يناسب طبيعة النشاط التجاري.',
+    url: '/commercial-paints',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
