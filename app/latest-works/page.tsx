@@ -1,4 +1,19 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'أحدث أعمال الدهانات والديكورات بالرياض | شغف اللحظة',
+  description:
+    'شاهد أحدث أعمال الدهانات والديكورات بالرياض، من تشطيبات المنازل والفلل إلى دهانات الجدران وورق الجدران، وتعرّف على نماذج من أعمالنا.',
+  alternates: {
+    canonical: '/latest-works',
+  },
+  openGraph: {
+    title: 'أحدث أعمال الدهانات والديكورات بالرياض | شغف اللحظة',
+    description: 'شاهد أحدث أعمال الدهانات والديكورات بالرياض، من تشطيبات المنازل والفلل إلى دهانات الجدران وورق الجدران، وتعرّف على نماذج من أعمالنا.',
+    url: '/latest-works',
+  },
+};
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';

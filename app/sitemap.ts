@@ -21,7 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return links.map((link) => ({
     url: `${baseUrl}${link}`,
-    lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: link === '' ? 1 : 0.8,
   }))

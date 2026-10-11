@@ -1,4 +1,19 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'دهانات محلات ومكاتب بالرياض | ديكورات ودهانات شغف اللحظة',
+  description:
+    'تنفيذ دهانات المحلات التجارية والمكاتب والمنشآت بالرياض، مع تشطيبات داخلية وخارجية وتنسيق ألوان يناسب طبيعة النشاط التجاري.',
+  alternates: {
+    canonical: '/commercial-paints',
+  },
+  openGraph: {
+    title: 'دهانات محلات ومكاتب بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'تنفيذ دهانات المحلات التجارية والمكاتب والمنشآت بالرياض، مع تشطيبات داخلية وخارجية وتنسيق ألوان يناسب طبيعة النشاط التجاري.',
+    url: '/commercial-paints',
+  },
+};
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';

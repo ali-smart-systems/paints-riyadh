@@ -21,16 +21,12 @@ export const metadata: Metadata = {
     "معلم ديكورات حطين", "تركيب ورق جدران الرياض", "دهانات حي القيروان"
   ],
   metadataBase: new URL('https://www.paints-riyadh.com'),
-  alternates: {
-    canonical: '/',
-  },
   verification: {
     google: 'srE7zYz29bthebfKw-8K44rgGBfFAHoTBP1p0qvxN9Q',
   },
   openGraph: {
     title: 'ديكورات ودهانات شغف اللحظة',
     description: 'تنفيذ كافة أعمال البويات والديكور (بديل رخام، فوم، خشب) بالرياض بأحدث التقنيات.',
-    url: 'https://www.paints-riyadh.com',
     siteName: 'ديكورات ودهانات شغف اللحظة',
     locale: 'ar_SA',
     type: 'website',
