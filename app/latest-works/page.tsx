@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/latest-works',
   },
+  openGraph: {
+    title: 'أحدث أعمال الدهانات والديكورات بالرياض | شغف اللحظة',
+    description: 'شاهد أحدث أعمال الدهانات والديكورات بالرياض، من تشطيبات المنازل والفلل إلى دهانات الجدران وورق الجدران، وتعرّف على نماذج من أعمالنا.',
+    url: '/latest-works',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
