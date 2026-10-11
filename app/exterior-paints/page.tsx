@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/exterior-paints',
   },
+  openGraph: {
+    title: 'معلم دهانات خارجية بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'تنفيذ دهانات خارجية بالرياض للفلل والمنازل والواجهات، باستخدام دهانات مقاومة للشمس والعوامل الجوية مع تشطيبات احترافية.',
+    url: '/exterior-paints',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
