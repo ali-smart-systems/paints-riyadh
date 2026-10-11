@@ -26,7 +26,7 @@ jobs:
           node-version: '22'
           cache: npm
 
-            - name: Install dependencies
+      - name: Update dependency lock file
         run: npm install --package-lock-only --no-audit --no-fund
 
       - name: Verify dependency lock file
@@ -37,11 +37,10 @@ jobs:
         with:
           name: updated-package-lock
           path: package-lock.json
-          retention-days: 1
+          retention-days: 7
 
       - name: Build Next.js application
         run: npm run build
         env:
           NEXT_TELEMETRY_DISABLED: '1'
           GEMINI_API_KEY: 'ci-placeholder-not-a-real-key'
-          
