@@ -1,4 +1,14 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'استشارات دهانات بالرياض | ديكورات ودهانات شغف اللحظة',
+  description:
+    'استشارات دهانات وديكورات بالرياض، المساعدة في اختيار ألوان الجدران وأنواع الدهانات والتشطيبات المناسبة للمنازل والفلل والمكاتب.',
+  alternates: {
+    canonical: '/painting-consultation',
+  },
+};
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
