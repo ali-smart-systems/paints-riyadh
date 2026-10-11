@@ -1,4 +1,14 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'معلم تركيب ورق جدران بالرياض | ديكورات ودهانات شغف اللحظة',
+  description:
+    'خدمات تركيب ورق جدران بالرياض للمجالس وغرف النوم والصالات والفلل، مع تجهيز الجدران وتركيب ورق الجدران بعناية وتشطيبات احترافية.',
+  alternates: {
+    canonical: '/wallpaper-install',
+  },
+};
 import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
