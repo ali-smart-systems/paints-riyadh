@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/apartments-paints',
   },
+  openGraph: {
+    title: 'معلم دهانات شقق بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'خدمات دهانات الشقق بالرياض، دهان الشقق الجديدة وتجديد الشقق القديمة، تشطيب الغرف والصالات والمجالس بألوان عصرية وتنفيذ احترافي.',
+    url: '/apartments-paints',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
