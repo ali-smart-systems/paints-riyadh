@@ -26,8 +26,18 @@ jobs:
           node-version: '22'
           cache: npm
 
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
+            - name: Install dependencies
+        run: npm install --package-lock-only --no-audit --no-fund
+
+      - name: Verify dependency lock file
+        run: npm ci --no-audit --no-fund
+
+      - name: Upload updated lock file
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-package-lock
+          path: package-lock.json
+          retention-days: 1
 
       - name: Build Next.js application
         run: npm run build
