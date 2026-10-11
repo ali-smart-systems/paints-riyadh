@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/wallpaper-install',
   },
+  openGraph: {
+    title: 'معلم تركيب ورق جدران بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'خدمات تركيب ورق جدران بالرياض للمجالس وغرف النوم والصالات والفلل، مع تجهيز الجدران وتركيب ورق الجدران بعناية وتشطيبات احترافية.',
+    url: '/wallpaper-install',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
