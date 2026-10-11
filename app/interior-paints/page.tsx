@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/interior-paints',
   },
+  openGraph: {
+    title: 'معلم دهانات داخلية بالرياض | ديكورات ودهانات شغف اللحظة',
+    description: 'خدمات دهانات داخلية بالرياض للمجالس وغرف النوم والصالات، مع تشطيبات مودرن ودهانات عالية الجودة وتنسيق احترافي للألوان.',
+    url: '/interior-paints',
+  },
 };
 import Script from 'next/script';
 import Image from 'next/image';
