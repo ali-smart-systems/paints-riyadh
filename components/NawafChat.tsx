@@ -44,7 +44,9 @@ const NawafChat = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: input, messageCount: userMessageCount }),
             });
+            if (!res.ok) throw new Error('Chat request failed');
             const data = await res.json();
+            if (typeof data.reply !== 'string' || !data.reply.trim()) throw new Error('Invalid chat response');
             setMessages(prev => [...prev, { role: 'bot', text: data.reply }]);
         } catch (error) {
             setMessages(prev => [...prev, { role: 'bot', text: 'المعذرة يا غالي، اتصل بي مباشرة 0536242933 وأبشر بسعدك!' }]);
@@ -59,7 +61,7 @@ const NawafChat = () => {
         <div className="fixed bottom-[20px] left-[10px] sm:left-[100px] z-[999999] w-[calc(100vw-20px)] max-w-[320px] h-[min(450px,75dvh)] bg-white rounded-[20px] shadow-2xl flex flex-col border border-slate-200 overflow-hidden font-sans transition-all duration-300" dir="rtl">
             <div className="bg-[#0f172a] text-[#fbbf24] p-4 text-center font-black text-lg border-b border-[#fbbf24]/30 flex justify-between items-center">
                 <span>مساعد شغف اللحظة</span>
-                <button onClick={() => setIsOpen(false)} className="text-white hover:text-red-400 text-xl">✕</button>
+                <button onClick={() => setIsOpen(false)} aria-label="إغلاق المحادثة" className="text-white hover:text-red-400 text-xl">✕</button>
             </div>
 
             <div ref={scrollRef} className="flex-1 p-4 bg-slate-50 overflow-y-auto flex flex-col gap-3">
@@ -77,7 +79,7 @@ const NawafChat = () => {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    onKeyDown={(e) => { if (e.key === 'Enter' && !e.nativeEvent.isComposing) void handleSend(); }}
                     className="flex-1 p-3 bg-slate-100 border border-slate-200 rounded-xl outline-none text-slate-800 text-sm focus:border-[#e63946] focus:bg-white transition-colors"
                     placeholder="اسأل عن الأسعار أو الأنواع..."
                 />
