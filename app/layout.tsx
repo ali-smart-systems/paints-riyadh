@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
+    "@type": "Organization",
     "name": "ديكورات ودهانات شغف اللحظة",
     "url": "https://www.paints-riyadh.com",
     "telephone": "+966536242933",
