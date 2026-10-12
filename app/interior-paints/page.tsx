@@ -2,15 +2,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'دهانات داخلية بالرياض للمجالس والغرف | شغف اللحظة',
+  title: 'دهانات داخلية وديكورات بالرياض للشقق والفلل | شغف اللحظة',
   description:
-    'دهانات داخلية بالرياض للمجالس وغرف النوم والصالات والشقق والفلل، تشمل تجديد الجدران وتجهيز الأسطح واختيار درجات الألوان والتشطيبات المناسبة.',
+    'دهانات داخلية بالرياض للشقق والفلل والمجالس وغرف النوم، مع تجهيز الجدران وتجديد الطلاء واختيار درجات الألوان والتشطيبات المناسبة لكل مساحة.',
   alternates: {
     canonical: '/interior-paints',
   },
   openGraph: {
-    title: 'دهانات داخلية بالرياض للمجالس والغرف | شغف اللحظة',
-    description: 'دهانات داخلية بالرياض للمجالس وغرف النوم والصالات والشقق والفلل، تشمل تجديد الجدران وتجهيز الأسطح واختيار درجات الألوان والتشطيبات المناسبة.',
+    title: 'دهانات داخلية وديكورات بالرياض للشقق والفلل | شغف اللحظة',
+    description: 'دهانات داخلية بالرياض للشقق والفلل والمجالس وغرف النوم، مع تجهيز الجدران وتجديد الطلاء واختيار درجات الألوان والتشطيبات المناسبة لكل مساحة.',
     url: '/interior-paints',
   },
 };
@@ -94,7 +94,7 @@ export default function InteriorPaints() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
-                    دهانات <span className="text-brand-gold">داخلية وديكورات</span>
+                    دهانات <span className="text-brand-gold">داخلية وديكورات بالرياض</span>
                 </h1>
 
                 <p className="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed font-bold mb-8 drop-shadow-md">
@@ -168,6 +168,8 @@ export default function InteriorPaints() {
                     <p className="text-slate-400 mt-6 font-bold">— نصائح لاختيار الدهانات الداخلية</p>
                 </div>
             </section>
+
+            <section className="px-5 max-w-6xl mx-auto mb-10" aria-label="إرشادات الخدمة"><div className="bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-800"><h2 className="text-2xl font-bold text-white">نصائح قبل طلب الخدمة</h2><p className="text-slate-300 leading-loose mt-4">في دهانات الشقق والفلل، يساعد اختيار درجة اللمعة المناسبة على تحقيق توازن بين المظهر وسهولة التنظيف. جرّب عينة لون في إضاءة الغرفة قبل اعتماد اللون، وحدد أعمال معالجة العيوب قبل بدء الدهان.</p></div></section>
 
             <ContactButtons phoneNumber={PHONE_NUMBER} />
         </main>
