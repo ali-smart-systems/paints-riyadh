@@ -2,15 +2,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'دهانات خارجية بالرياض للفلل والواجهات | شغف اللحظة',
+  title: 'دهانات خارجية وبويات واجهات بالرياض | شغف اللحظة',
   description:
-    'دهانات خارجية بالرياض للفلل والواجهات والأسوار، تشمل رشات البروفايل وتجديد الدهانات ومعالجة الأسطح قبل الطلاء. تواصل معنا للاستفسار عن التنفيذ.',
+    'دهانات خارجية وبويات واجهات بالرياض للفلل والأسوار، رشات بروفايل وتجديد الطلاء. تعرّف على تجهيز الواجهات واختيار التشطيبات المناسبة قبل التنفيذ.',
   alternates: {
     canonical: '/exterior-paints',
   },
   openGraph: {
-    title: 'دهانات خارجية بالرياض للفلل والواجهات | شغف اللحظة',
-    description: 'دهانات خارجية بالرياض للفلل والواجهات والأسوار، تشمل رشات البروفايل وتجديد الدهانات ومعالجة الأسطح قبل الطلاء. تواصل معنا للاستفسار عن التنفيذ.',
+    title: 'دهانات خارجية وبويات واجهات بالرياض | شغف اللحظة',
+    description: 'دهانات خارجية وبويات واجهات بالرياض للفلل والأسوار، رشات بروفايل وتجديد الطلاء. تعرّف على تجهيز الواجهات واختيار التشطيبات المناسبة قبل التنفيذ.',
     url: '/exterior-paints',
   },
 };
@@ -95,7 +95,7 @@ export default function ExteriorPaints() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
-                    دهانات <span className="text-brand-gold">واجهات خارجية</span>
+                    دهانات <span className="text-brand-gold">خارجية للواجهات والفلل بالرياض</span>
                 </h1>
 
                 <p className="max-w-3xl mx-auto text-lg text-slate-100 leading-relaxed font-bold mb-8 drop-shadow-md">
@@ -169,6 +169,8 @@ export default function ExteriorPaints() {
                     <p className="text-slate-300 leading-loose">للاستفسار عن دهانات الفلل والأسوار أو رشات البروفايل في الرياض، تواصل معنا لمناقشة حالة الواجهة والخيارات المتاحة.</p>
                 </div>
             </section>
+
+            <section className="px-5 max-w-6xl mx-auto mb-10" aria-label="إرشادات الخدمة"><div className="bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-800"><h2 className="text-2xl font-bold text-white">نصائح قبل طلب الخدمة</h2><p className="text-slate-300 leading-loose mt-4">عند اختيار بويات خارجية للمنزل، افحص تقشر الطلاء والرطوبة والشروخ أولًا؛ فالتجهيز المناسب ونوع الأساس والتشطيب عوامل مهمة لنتيجة متناسقة. تختلف الخيارات بحسب تعرض الواجهة للشمس وحالة السطح.</p></div></section>
 
             <ContactButtons phoneNumber={PHONE_NUMBER} />
         </main>
