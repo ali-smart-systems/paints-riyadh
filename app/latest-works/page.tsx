@@ -25,7 +25,7 @@ const JSON_LD = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
     "name": "معرض أعمال دهانات وديكورات الرياض 2026",
-    "description": "شاهد أحدث مشاريع الدهانات والديكور التي تم تنفيذها في أحياء الرياض. دقة في التنفيذ وأرقى التصاميم العالمية.",
+    "description": "مجموعة صور توضيحية لأفكار الدهانات والديكور والتشطيبات في الرياض.",
     "provider": {
         "@type": "ProfessionalService",
         "name": "معلم دهانات الرياض",
@@ -60,7 +60,7 @@ export default function LatestWorks() {
                 </Link>
 
                 <div className="bg-brand-gold/20 text-brand-gold px-6 py-2 rounded-full text-sm font-black mb-6 border border-brand-gold/30 mt-10">
-                    أحدث الإنجازات لعام 2026 🏆
+                    أفكار وتصاميم للدهانات والديكور
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
@@ -68,7 +68,7 @@ export default function LatestWorks() {
                 </h1>
 
                 <p className="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed font-bold mb-8 drop-shadow-md">
-                    هنا نستعرض دقة تفاصيلنا في أرقى فلل وشقق الرياض. صور حقيقية من مواقع العمل تعكس جودتنا.
+                    تصفح مجموعة صور لأفكار الدهانات والديكورات. للاستفسار عن الأعمال المنفذة فعلياً، تواصل معنا مباشرة.
                 </p>
             </header>
 
@@ -86,7 +86,7 @@ export default function LatestWorks() {
             <section className="px-5 max-w-6xl mx-auto mt-20 mb-20">
                 <div className="flex items-center justify-between mb-10">
                     <h3 className="text-2xl md:text-3xl font-black text-white">
-                        <span className="text-brand-gold ml-2">|</span>ألبوم المشاريع الحديثة
+                        <span className="text-brand-gold ml-2">|</span>معرض الصور والتصاميم
                     </h3>
                 </div>
 
@@ -95,7 +95,7 @@ export default function LatestWorks() {
                         <div key={index} className="relative h-[350px] md:h-[450px] rounded-[40px] overflow-hidden shadow-strong border border-slate-800 group bg-slate-900">
                             <Image
                                 src={`/images/paint${imgNum}.webp`}
-                                alt={`أحدث أعمال دهانات الرياض - نموذج ${index + 1}`}
+                                alt={`أفكار دهانات وديكورات - صورة ${index + 1}`}
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -106,8 +106,8 @@ export default function LatestWorks() {
 
                             <div className="absolute bottom-8 right-8 left-8">
                                 <div className="bg-slate-950/80 backdrop-blur-md border border-brand-gold/30 p-4 rounded-2xl shadow-strong transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <p className="text-brand-gold font-black text-lg">مشروع تنفيذ دهانات وديكورات</p>
-                                    <p className="text-slate-300 text-sm mt-1 font-bold">الرياض - حي {["النخيل", "حطين", "الملقا", "الياسمين", "الصحافة", "المنار", "الروضة", "النرجس"][index]}</p>
+                                    <p className="text-brand-gold font-black text-lg">أفكار دهانات وديكورات</p>
+                                    <p className="text-slate-300 text-sm mt-1 font-bold">نماذج وصور للتصاميم</p>
                                 </div>
                             </div>
                         </div>
