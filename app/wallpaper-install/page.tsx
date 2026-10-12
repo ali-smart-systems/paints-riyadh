@@ -2,15 +2,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'تركيب ورق جدران بالرياض للمجالس والغرف | شغف اللحظة',
+  title: 'شركة تركيب ورق جدران بالرياض | فني تركيب | شغف اللحظة',
   description:
-    'تركيب ورق جدران بالرياض للمجالس وغرف النوم والصالات، بما يشمل الورق ثلاثي الأبعاد والكلاسيكي والمودرن، مع الاهتمام بتجهيز السطح وتنسيق النقشات.',
+    'تركيب ورق جدران بالرياض للمجالس والصالات وغرف النوم. تعرف على تجهيز الجدار، اختيار اللاصق المناسب، ومحاذاة النقشات قبل طلب خدمة التركيب.',
   alternates: {
     canonical: '/wallpaper-install',
   },
   openGraph: {
-    title: 'تركيب ورق جدران بالرياض للمجالس والغرف | شغف اللحظة',
-    description: 'تركيب ورق جدران بالرياض للمجالس وغرف النوم والصالات، بما يشمل الورق ثلاثي الأبعاد والكلاسيكي والمودرن، مع الاهتمام بتجهيز السطح وتنسيق النقشات.',
+    title: 'شركة تركيب ورق جدران بالرياض | فني تركيب | شغف اللحظة',
+    description: 'تركيب ورق جدران بالرياض للمجالس والصالات وغرف النوم. تعرف على تجهيز الجدار، اختيار اللاصق المناسب، ومحاذاة النقشات قبل طلب خدمة التركيب.',
     url: '/wallpaper-install',
   },
 };
@@ -94,7 +94,7 @@ export default function WallpaperInstall() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
-                    خدمة <span className="text-brand-gold">تركيب ورق الجدران</span>
+                    خدمة <span className="text-brand-gold">تركيب ورق جدران بالرياض</span>
                 </h1>
 
                 <p className="max-w-3xl mx-auto text-lg text-slate-200 leading-relaxed font-bold mb-8 drop-shadow-md">
@@ -168,6 +168,8 @@ export default function WallpaperInstall() {
                     <p className="text-slate-400 mt-8 font-bold">— إرشادات قبل تركيب ورق الجدران</p>
                 </div>
             </section>
+
+            <section className="px-5 max-w-6xl mx-auto mb-10" aria-label="إرشادات الخدمة"><div className="bg-slate-900 p-6 md:p-8 rounded-3xl border border-slate-800"><h2 className="text-2xl font-bold text-white">نصائح قبل طلب الخدمة</h2><p className="text-slate-300 leading-loose mt-4">قبل تركيب ورق الجدران، تأكد من جفاف السطح واستوائه وخلوه من التقشير. تختلف طريقة التركيب واللاصق بحسب نوع الورق، كما تؤثر النقشات المتكررة في مقدار القص والهدر المطلوب.</p></div></section>
 
             <ContactButtons phoneNumber={PHONE_NUMBER} />
         </main>
