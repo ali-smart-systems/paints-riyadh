@@ -2,15 +2,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'أحدث أعمال الدهانات والديكورات بالرياض | شغف اللحظة',
+  title: 'معرض أفكار الدهانات والديكورات بالرياض | شغف اللحظة',
   description:
-    'شاهد أحدث أعمال الدهانات والديكورات بالرياض، من تشطيبات المنازل والفلل إلى دهانات الجدران وورق الجدران، وتعرّف على نماذج من أعمالنا.',
+    'تصفح صوراً توضيحية لأفكار الدهانات والديكورات وتشطيبات المنازل بالرياض، وتواصل معنا لمعرفة تفاصيل خدمات التنفيذ.',
   alternates: {
     canonical: '/latest-works',
   },
   openGraph: {
-    title: 'أحدث أعمال الدهانات والديكورات بالرياض | شغف اللحظة',
-    description: 'شاهد أحدث أعمال الدهانات والديكورات بالرياض، من تشطيبات المنازل والفلل إلى دهانات الجدران وورق الجدران، وتعرّف على نماذج من أعمالنا.',
+    title: 'معرض أفكار الدهانات والديكورات بالرياض | شغف اللحظة',
+    description: 'تصفح صوراً توضيحية لأفكار الدهانات والديكورات وتشطيبات المنازل بالرياض، وتواصل معنا لمعرفة تفاصيل خدمات التنفيذ.',
     url: '/latest-works',
   },
 };
@@ -24,7 +24,7 @@ const PHONE_NUMBER = "0536242933";
 const JSON_LD = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    "name": "معرض أعمال دهانات وديكورات الرياض 2026",
+    "name": "معرض أفكار دهانات وديكورات الرياض",
     "description": "مجموعة صور توضيحية لأفكار الدهانات والديكور والتشطيبات في الرياض.",
     "provider": {
         "@type": "ProfessionalService",
@@ -33,7 +33,7 @@ const JSON_LD = {
     }
 };
 
-// 8 صور حصرية لهذه الصفحة (من 19 إلى 26)
+// صور توضيحية للمعرض
 const GALLERY_IMAGES = [31, 32, 33, 34, 35, 36, 37, 38];
 
 export default function LatestWorks() {
@@ -64,7 +64,7 @@ export default function LatestWorks() {
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-tight drop-shadow-2xl">
-                    معرض <span className="text-brand-gold">الأعمال الأخيرة</span>
+                    معرض <span className="text-brand-gold">الدهانات والديكورات</span>
                 </h1>
 
                 <p className="max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed font-bold mb-8 drop-shadow-md">
@@ -119,8 +119,8 @@ export default function LatestWorks() {
             <section className="px-5 max-w-4xl mx-auto mb-20">
                 <a href={`tel:${PHONE_NUMBER}`} className="group relative flex flex-col items-center justify-center bg-slate-900 border border-brand-gold/20 hover:border-brand-gold p-12 rounded-[40px] transition-all duration-500 shadow-strong overflow-hidden text-center">
                     <div className="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <span className="text-brand-gold text-xl font-bold mb-4">هل أعجبك مستوى التنفيذ؟</span>
-                    <span className="text-white text-3xl md:text-5xl font-black leading-tight">احصل على معاينة مجانية <br /> واتصل بنا الآن</span>
+                    <span className="text-brand-gold text-xl font-bold mb-4">هل أعجبتك هذه الأفكار؟</span>
+                    <span className="text-white text-3xl md:text-5xl font-black leading-tight">استفسر عن خدمات التنفيذ <br /> واتصل بنا الآن</span>
                     <div className="mt-8 text-5xl font-black text-brand-gold tracking-tighter">{PHONE_NUMBER}</div>
                 </a>
             </section>
